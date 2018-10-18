@@ -1,0 +1,29 @@
+{
+    "name": "maexware/ajaxsearch",
+    "description": "This is a simple oxid search extension with search suggest for the OXID eShop without external requests and service providers.",
+    "type": "oxideshop-module",
+    "keywords": ["oxid", "modules", "eShop", "search"],
+    "homepage": "https://www.maexware-solutions.de",
+    "license": [
+        "GPL-3.0-only",
+        "proprietary"
+    ],
+    "extra": {
+        "oxideshop": {
+            "blacklist-filter": [
+                "documentation/**/*.*",
+                "composer.json",
+                "README.md"
+            ],
+            "target-directory": "mx/ajaxsearch"
+        }
+    },
+    "require": {
+        "php": ">=5.6",
+    },
+    "autoload": {
+        "psr-4": {
+            "maexware\\AjaxSearch\\": "../../../source/modules/mx/ajaxsearch"
+        }
+    }
+}
