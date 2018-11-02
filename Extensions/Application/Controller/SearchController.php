@@ -20,7 +20,7 @@
  * @copyright (C) maexware solutions GmbH 2018
  */
 
-namespace maexware\ajaxsearch\Extensions\Application\Controller;
+namespace maexware\AjaxSearch\Extensions\Application\Controller;
 
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\Eshop\Core\Request;

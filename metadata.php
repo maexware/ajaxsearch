@@ -47,7 +47,7 @@ $aModule = [
     'email'       => 'info@maexware-solutions.de',
 
     'extend'       => [
-        \OxidEsales\Eshop\Application\Controller\SearchController::class => \maexware\ajaxsearch\Extensions\Application\Controller\SearchController::class,
+        \OxidEsales\Eshop\Application\Controller\SearchController::class => \maexware\AjaxSearch\Extensions\Application\Controller\SearchController::class,
     ],
     'files' => [
     ],
