@@ -1,0 +1,7 @@
+#ajaxsearch {
+    margin-top: 6vh !important;
+}
+
+#searchTerm:before,#searchTerm:after {
+    content:'"';
+}
