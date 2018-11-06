@@ -25,7 +25,6 @@ namespace maexware\AjaxSearch\Extensions\Application\Controller;
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\Eshop\Core\Request;
 
-
 class SearchController extends SearchController_parent
 {
 
@@ -51,8 +50,13 @@ class SearchController extends SearchController_parent
         return parent::render();
     }
 
+    /**
+     * Starts ajaxsearch based on OXID search logic
+     * returns articlelist
+     *
+     * @return  object search result
+     */
     public function startAjaxSearch() {
-
 
         $myConfig = $this->getConfig();
         $oConfig = Registry::getConfig();
@@ -81,6 +85,9 @@ class SearchController extends SearchController_parent
         if (!$oConfig->getConfigParam('bl_perfLoadManufacturerTree')) {
             $sInitialSearchManufacturer = null;
         }
+
+        $iLimit = Registry::getConfig()->getConfigParam('mxAjaxSearch_maxSearchItems');
+        Registry::getConfig()->setConfigParam('iNrofCatArticles',$iLimit);
 
         // searching ..
         /** @var oxSearch $oSearchHandler */

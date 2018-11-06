@@ -41,7 +41,7 @@ $aModule = [
         'de' => 'Einfache Ajax Suche im Modal für OXID Suche im Header',
     ],
     'thumbnail'   => 'maexware.png',
-    'version'     => '0.1',
+    'version'     => '0.2',
     'author'      => 'maexware solutions GmbH',
     'url'         => 'https://www.maexware-solutions.de',
     'email'       => 'info@maexware-solutions.de',
@@ -58,5 +58,11 @@ $aModule = [
         ['template' => 'widget/header/search.tpl', 'block'=>'widget_header_search_form', 'file'=>'Application/views/tpl/search_ext.tpl'],
     ],
     'settings' => [
+        [
+            'group' => 'mxAjaxSearch',
+            'name'  => 'mxAjaxSearch_maxSearchItems',
+            'type'  => 'str',
+            'value' => '15'
+        ],
     ]
 ];

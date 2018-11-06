@@ -27,3 +27,10 @@ In order to install the module via composer run the following commands in comman
 
 `composer require maexware/ajaxsearch:dev-master`
 
+
+===============
+
+### Module options
+
+To configure the count of displayed ajax search items go to:
+Admin -> "Erweiterungen" -> "Module" -> [maeXware] Ajax search -> "Einstell."
