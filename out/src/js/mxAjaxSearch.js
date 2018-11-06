@@ -45,4 +45,4 @@ $(document).ready(function(){
 
 $('#ajaxsearch').on('hidden.bs.modal', function () {
     document.getElementById("searchParam").focus();
-})
+});
