@@ -42,3 +42,7 @@ $(document).ready(function(){
         }, 1000);
     });
 });
+
+$('#ajaxsearch').on('hidden.bs.modal', function () {
+    document.getElementById("searchParam").focus();
+})
