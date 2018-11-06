@@ -1,15 +1,16 @@
 var searchTimeout = 1;
 var thisinputval;
 var searchform;
+var isFromClosing = false;
 
 function startSearch(searchParam,actID) {
     $('#ajaxsearch .modal-body').load(sBaseUrl+"cl=search&searchajax=1&searchparam="+searchParam, function() {});
     if (searchform == undefined) {
         searchform = $('form.search');
     }
-    //$('#ajaxsearch #searchTerm').html(searchform);
+
     $('#ajaxsearch').modal('show');
-    //$('#'+actID).focus();
+
     if (actID == 'searchParam') {
         $('#searchTerm').val($('#searchParam').val());
     } else {
@@ -35,9 +36,12 @@ $(document).ready(function(){
             $('#ajaxsearch .modal-body').empty();
             //$('#ajaxsearch #searchTerm').empty();
             searchstring = htmlEntities($(thisinputval.target).val());
-            if (searchstring != '') {
+            if (searchstring != '' && isFromClosing == false) {
                 $('#ajaxsearch #searchTerm').html(searchstring);
                 startSearch(searchstring,actID);
+            }
+            if (isFromClosing == true) {
+                isFromClosing = false;
             }
         }, 1000);
     });
@@ -45,4 +49,5 @@ $(document).ready(function(){
 
 $('#ajaxsearch').on('hidden.bs.modal', function () {
     document.getElementById("searchParam").focus();
+    isFromClosing = true;
 });
