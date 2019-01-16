@@ -4,7 +4,12 @@ var searchform;
 var isFromClosing = false;
 
 function startSearch(searchParam,actID) {
-    $('#ajaxsearch .modal-body').load(sBaseUrl+"cl=search&searchajax=1&searchparam="+searchParam, function() {});
+    $.ajax({
+        url: sBaseUrl+"cl=search&searchajax=1&searchparam="+searchParam
+    }).done(function(response) {
+        $('#ajaxsearch .modal-body').html(response);
+    });
+
     if (searchform == undefined) {
         searchform = $('form.search');
     }
@@ -16,12 +21,18 @@ function startSearch(searchParam,actID) {
     } else {
         $('#searchParam').val($('#searchTerm').val());
     }
-    document.getElementById(actID).focus();
 }
 
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+
+$('#ajaxsearch').on('shown.bs.modal', function() {
+    setTimeout(function (){
+        $('#searchTerm').focus();
+    }, 150);
+
+})
 
 $(document).ready(function(){
     $(".search input[type=text], input#searchTerm").on("keyup", function(event){

@@ -41,7 +41,7 @@ $aModule = [
         'de' => 'Einfache Ajax Suche im Modal für OXID Suche im Header',
     ],
     'thumbnail'   => 'maexware.png',
-    'version'     => '0.2',
+    'version'     => '0.3',
     'author'      => 'maexware solutions GmbH',
     'url'         => 'https://www.maexware-solutions.de',
     'email'       => 'info@maexware-solutions.de',
@@ -49,7 +49,7 @@ $aModule = [
     'extend'       => [
         \OxidEsales\Eshop\Application\Controller\SearchController::class => \maexware\AjaxSearch\Extensions\Application\Controller\SearchController::class,
     ],
-    'files' => [
+    'controllers' => [
     ],
     'templates' => [
         "ajax_result.tpl"=> "mx/ajaxsearch/Application/views/tpl/ajax_result.tpl",
